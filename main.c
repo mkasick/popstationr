@@ -762,10 +762,11 @@ int ExtractISO(char * eboot, char * output)
 
    printf("  Processing... [%04dMB|0000MB]",(isosize/(1024*1024)));
 
-   do
+   for(;;)
    {
       fseek(fp, (indexoffset+(i*32)), SEEK_SET);
       fread(&pointervalue, 1, (8*4), fp);
+      if(!pointervalue[1]) break;
 
       if((i==0)&&(pointervalue[1]<0x9300)) compressed=1;
 
@@ -799,7 +800,7 @@ int ExtractISO(char * eboot, char * output)
       }
 
       i++;
-   } while(pointervalue[1]);
+   };
 
    printf("\010\010\010\010\010\010\010");
    printf(" DONE ]\n");
