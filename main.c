@@ -146,8 +146,8 @@ void SetSFOTitle(char *sfo, char *title)
 	}
 }
 
-char buffer[1*1048576];
-char buffer2[0x9300];
+unsigned char buffer[1*1048576];
+unsigned char buffer2[0x9300];
 
 //I'm Rick James - Bitch! ArHArHArH! :D
 int logo = 0, pic0 = 0, pic1 = 0, icon0 = 0, icon1 = 0, snd = 0, toc = 0, prx = 0;
