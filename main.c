@@ -773,7 +773,7 @@ int ExtractISO(char * eboot, char * output)
       fseek(fp, (isooffset+pointervalue[0]), SEEK_SET);
       fread(buffer, 1, pointervalue[1], fp);
 
-      if((isosize-pointervalue[1])<0)
+      if((isosize-0x9300)<0)
       {
          write=isosize;
       }
